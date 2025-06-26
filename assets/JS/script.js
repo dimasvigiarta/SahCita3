@@ -3,43 +3,52 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.getElementById("navbar");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  // === 1. Cek scroll saat halaman dimuat
-  if (window.scrollY > 50) {
-    navbar.classList.add("nav-scroll");
-  } else {
-    navbar.classList.remove("nav-scroll");
-  }
-
-  // === 2. Tambahkan event scroll
-  window.addEventListener("scroll", function () {
+  // 1. Ubah navbar saat scroll
+  function handleNavbarScroll() {
     if (window.scrollY > 50) {
       navbar.classList.add("nav-scroll");
     } else {
       navbar.classList.remove("nav-scroll");
     }
-  });
+  }
 
-  // === 3. Deteksi halaman aktif dan beri class 'active'
+  handleNavbarScroll();
+  window.addEventListener("scroll", handleNavbarScroll);
+
+  // 2. Tandai link aktif berdasarkan halaman
   let currentPage = window.location.pathname.split("/").pop();
   if (currentPage === "") currentPage = "index.html";
 
   navLinks.forEach((link) => {
     const linkHref = link.getAttribute("href");
+
+    // Jika sama, tandai sebagai aktif
     if (linkHref === currentPage) {
       link.classList.add("active");
     } else {
       link.classList.remove("active");
     }
 
-    // Tambahan klik aktif langsung (untuk visual saat klik)
+    // Tambahan: efek langsung saat klik
     link.addEventListener("click", function () {
       navLinks.forEach((el) => el.classList.remove("active"));
       this.classList.add("active");
     });
+
+    // 3. Tambahkan efek scroll smooth untuk anchor
+    if (linkHref && linkHref.startsWith("#")) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(linkHref);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    }
   });
 });
 
-// === ANIMASI FADE UP SAAT MASUK HALAMAN ===
+// === ANIMASI FADE UP SAAT MASUK VIEWPORT ===
 document.addEventListener("DOMContentLoaded", () => {
   const fadeUps = document.querySelectorAll(".fade-up");
 
@@ -48,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
-          obs.unobserve(entry.target); // animasi hanya sekali
+          obs.unobserve(entry.target); // hanya sekali tampil
         }
       });
     },
@@ -58,13 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
   fadeUps.forEach((el) => observer.observe(el));
 });
 
-// === LAYANAN KAMI - BUTTON SWITCH WITH SMOOTH CONTENT ===
+// === LAYANAN KAMI: SWITCH BUTTON DENGAN KONTEN SMOOTH ===
 document.addEventListener("DOMContentLoaded", () => {
   const layananBtns = document.querySelectorAll(".layanan-btn");
   const contents = document.querySelectorAll(".layanan-content");
   const container = document.querySelector(".layanan-content-container");
 
-  // Atur tinggi kontainer sesuai konten aktif
   function setContainerHeight() {
     const activeContent = document.querySelector(".layanan-content.show");
     if (!activeContent) {
@@ -75,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.style.height = height + "px";
   }
 
-  // Inisialisasi
+  // Inisialisasi default
   layananBtns.forEach((btn) => btn.classList.remove("active"));
   contents.forEach((c) => {
     c.classList.add("d-none");
@@ -93,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setContainerHeight();
   }
 
-  // Event saat klik tombol layanan
+  // Event saat tombol layanan diklik
   layananBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
       layananBtns.forEach((b) => b.classList.remove("active"));
