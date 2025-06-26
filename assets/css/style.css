@@ -38,9 +38,20 @@ body {
   font-weight: 700;
   color: var(--dark);
 }
+/* Tombol WhatsApp (highlight4) */
 .highlight4 {
-  font-weight: 700;
-  color: var(--green);
+  background-color: #25d366 !important; /* Hijau WhatsApp */
+  color: white !important;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.highlight4:hover {
+  background-color: #1ebe5d !important; /* Hijau lebih tua saat hover */
+  color: white !important;
+  transform: translateY(-2px);
 }
 
 /* === NAVBAR === */
@@ -229,7 +240,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.3; /* Ubah nilai ini sesuai kebutuhan */
+  opacity: 0.2; /* Ubah nilai ini sesuai kebutuhan */
   z-index: -1;
 }
 
@@ -270,7 +281,7 @@ body {
 #typed-text::after {
   content: "|";
   animation: blink 0.8s infinite;
-  color: var(--orange);
+  color: var(--ungu);
   margin-left: 2px;
 }
 

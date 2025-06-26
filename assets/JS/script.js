@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  type(); // mulai animasi
+  type();
 });
 
 // TENTANG KAMI
