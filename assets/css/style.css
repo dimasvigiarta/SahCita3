@@ -1,7 +1,7 @@
 /* === VARIABEL WARNA === */
 :root {
   --blue: #00098a;
-  --biru: #474fbe;
+  --biru: #010a8a;
   --bluedark: #31316a;
   --ungu: #530053;
   --orange: #ffa500;
@@ -11,6 +11,7 @@
   --grey: #dadada;
   --white: #ffffff;
   --green: #00a50e;
+  --merah: #c41616;
 
   --text-light: var(--white);
   --text-dark: var(--dark);
@@ -30,6 +31,13 @@ body {
 }
 
 /* === TEKS BOLD === */
+.danger {
+  color: var(--merah);
+}
+.hijau {
+  font-weight: 700;
+  color: var(--green);
+}
 .highlight1 {
   font-weight: 700;
   color: var(--ungu);
