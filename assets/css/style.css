@@ -1,0 +1,560 @@
+/* === VARIABEL WARNA === */
+:root {
+  --blue: #00098a;
+  --biru: #474fbe;
+  --bluedark: #31316a;
+  --ungu: #530053;
+  --orange: #ffa500;
+  --oren: #cb8400;
+  --dark: #2c2c2c;
+  --abu: #545454;
+  --grey: #dadada;
+  --white: #ffffff;
+  --green: #00a50e;
+
+  --text-light: var(--white);
+  --text-dark: var(--dark);
+}
+
+.text-body {
+  color: var(--orange);
+}
+
+body {
+  font-family: Raleway, sans-serif;
+  background: var(--white);
+}
+
+/* === TEKS BOLD === */
+.highlight1 {
+  font-weight: 700;
+  color: var(--ungu);
+}
+.highlight2 {
+  font-weight: 700;
+  color: var(--oren);
+}
+.highlight3 {
+  font-weight: 700;
+  color: var(--dark);
+}
+.highlight4 {
+  font-weight: 700;
+  color: var(--green);
+}
+
+/* === NAVBAR === */
+.mt--2 {
+  margin-top: -0.5rem !important;
+}
+
+.hr-dotted {
+  border-top: 1px dotted;
+  opacity: 0.25;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+#navbar .nav-link {
+  color: var(--white);
+}
+
+#navbar.nav-scroll .nav-link {
+  color: var(--dark);
+}
+
+#navbar .nav-link:hover,
+#navbar.nav-scroll .nav-link:hover {
+  color: var(--orange);
+}
+
+#navbar {
+  background-color: var(--biru);
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  box-shadow: none;
+  border-bottom: none;
+}
+
+#navbar.nav-scroll {
+  background-color: var(--white) !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #ddd;
+}
+
+/* Ikon fitur */
+.feature-icon-1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  font-size: 3rem;
+  color: var(--white);
+  border-radius: 100%;
+}
+
+/* Tombol sosial media */
+.btn-social-media {
+  color: var(--bluedark);
+  background-color: var(--grey);
+  border-color: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 1.2rem;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.btn-social-media:hover {
+  color: var(--ungu);
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+
+/* icon togler(humberger menu) */
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar.nav-scroll .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%232c2c2c' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.navbar-nav .nav-link {
+  display: inline-block;
+  padding: 0.4rem 0;
+  margin: 0 1.5rem;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+#navbar .nav-link.active,
+#navbar.nav-scroll .nav-link.active {
+  color: var(--orange) !important;
+}
+
+/* === ANIMASI FADE UP === */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === LAYANAN CONTENT SMOOTH === */
+.layanan-content-container {
+  transition: height 0.5s ease;
+}
+
+/* Konten masuk dari kiri/kanan (jika digunakan) */
+.animated-left {
+  animation: fadeInLeft 0.6s ease;
+}
+.animated-right {
+  animation: fadeInRight 0.6s ease;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === HERO SECTION === */
+.hero-section {
+  position: relative;
+  margin-top: 40px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  padding: 4rem 0;
+  font-family: "Poppins", sans-serif;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Tambahkan pseudo-element untuk background */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg/5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3; /* Ubah nilai ini sesuai kebutuhan */
+  z-index: -1;
+}
+
+.hero-welcome {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--abu);
+  margin-bottom: 0.3rem;
+}
+
+.hero-brand {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--abu);
+  margin-bottom: 1rem;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  font-weight: 350;
+  color: var(--abu);
+  max-width: 600px;
+}
+
+/* tombol whatsapp */
+.btn-wa {
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+}
+
+.btn-wa:hover {
+  background-color: var(--oren);
+  color: var(--white);
+}
+
+/* animasi mengetik */
+#typed-text::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+  color: var(--orange);
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* === TESTIMONI === */
+.testimoni-slider {
+  height: auto;
+  position: relative;
+}
+
+.slider-track {
+  width: max-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.testimoni-item {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+.slider-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* === TENTANG KAMI === */
+.about-section {
+  background-color: var(--white);
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.8;
+}
+
+.about-points li {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.about-icon-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-icon-title i {
+  font-size: 1.75rem;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.about-points li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.about-points li i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: var(--orange);
+  flex-shrink: 0;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-up-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+img.img-fluid.animated-float {
+  max-height: 260px;
+  height: auto;
+  object-fit: contain;
+}
+
+.section-gap {
+  margin-bottom: 1rem;
+}
+
+/* === LAYANAN KAMI === */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tombol layanan */
+.layanan-btn {
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: color 0.5s ease;
+  position: relative;
+  user-select: none;
+}
+
+.layanan-btn:hover i,
+.layanan-btn:hover span {
+  color: var(--orange);
+  transition: color 0.2s ease;
+}
+
+.layanan-btn.active i,
+.layanan-btn.active span {
+  color: var(--orange);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.indicator {
+  height: 4px;
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+  border-radius: 2px;
+}
+
+.layanan-btn.active .indicator {
+  background-color: var(--orange);
+}
+
+/* Konten layanan */
+.layanan-content-container {
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+/* Konten animasi */
+.layanan-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.9s ease;
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.layanan-content.show {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  z-index: 1;
+  pointer-events: auto; /* aktifkan interaksi */
+  height: auto;
+}
+
+.animated-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 1s ease;
+}
+
+.animated-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animated-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 1s ease;
+}
+
+.animated-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.d-none {
+  display: none !important;
+}
+
+/* === GALERI === */
+.card-img-top {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+}
+
+/* === KONTAK === */
+.fade-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === FOOTER === */
+.footer {
+  background-color: var(--biru);
+}
+
+.footer .copyright a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+.footer .copyright a:hover {
+  color: var(--ungu);
+}
+
+.footer .link a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer .link a:hover {
+  color: var(--orange);
+}
+
+.container .copyright {
+  color: var(--white);
+}
