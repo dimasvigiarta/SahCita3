@@ -287,9 +287,10 @@ body {
   border: none;
 }
 
+.btn-wa:focus,
 .btn-wa:hover {
-  background-color: var(--oren);
-  color: var(--white);
+  background-color: var(--oren) !important;
+  color: var(--white) !important;
 }
 
 /* animasi mengetik */
